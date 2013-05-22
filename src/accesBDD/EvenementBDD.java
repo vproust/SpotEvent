@@ -6,28 +6,30 @@ import singletons.EvenementCourant;
 import singletons.Utilisateur;
 import spotevent.fabien.un.R;
 
-import android.content.Context;
-
 import com.mapquest.android.maps.GeoPoint;
 
 
 public class EvenementBDD {
 	//m師hode qui r残up俊e dans la bdd tous les marqueurs de l'思始ement, les instancie un par un et les ajoute a l'思始ement
-	public static void setMarqueurs(Context context){
+	public static void setMarqueurs(){
 		//TTT
 		Personne prs3 = new Personne();
 	    prs3.setIdPersonne("prs3");
 	    prs3.setNomPersonne("Richard");
 	    prs3.setPrenomPersonne("Fabien");
+	    prs3.setDernierMarqueurIconePersonne(R.drawable.marqueur3);
+	    prs3.setPasDernierMarqueurIconePersonne(R.drawable.dot3);
 	    prs3.ajouterEvenement(EvenementCourant.getEvenementCourant());
-	    prs3.setNumPersonne(3,context);
+	    prs3.setNumPersonne(3);
 	    
 	    Personne prs2 = new Personne();
 	    prs2.setIdPersonne("prs2");
 	    prs2.setNomPersonne("Richard");
 	    prs2.setPrenomPersonne("Lucie");
+	    prs2.setDernierMarqueurIconePersonne(R.drawable.marqueur2);
+	    prs2.setPasDernierMarqueurIconePersonne(R.drawable.dot2);
 	    prs2.ajouterEvenement(EvenementCourant.getEvenementCourant());
-	    prs2.setNumPersonne(2,context);
+	    prs2.setNumPersonne(2);
 		
 		Marqueur mrq1 = new Marqueur(new GeoPoint(48.110913,-1.635268));mrq1.setEstDernier(false);mrq1.ajouterMarqueur(prs3);
 	    Marqueur mrq2 = new Marqueur(new GeoPoint(48.112245,-1.636963));mrq2.setEstDernier(false);mrq2.ajouterMarqueur(prs3);

@@ -120,9 +120,9 @@ public class ModeleCarte {
 	}
 
 	public void envoyerMarqueursEnAttente(){
-
+		
 	}
-
+	
 	public void miseAJourPositionManuelle(){
 
 		// Define a listener that responds to location updates
@@ -164,7 +164,7 @@ public class ModeleCarte {
 		//locationManagerManual.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListenerManual);
 		locationManagerManual.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListenerManual);
 	}
-
+	
 	public void stopManagerDePositionAutomatique(){
 		locationManagerAutomatic.removeUpdates(locationListenerAutomatic);
 	}
@@ -212,7 +212,7 @@ public class ModeleCarte {
 		//au minimum 2 minutes et 3 mètres
 		//locationManagerAutomatic.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 120000, 3, locationListenerAutomatic);
 		locationManagerAutomatic.requestLocationUpdates(LocationManager.GPS_PROVIDER, 120000, 3, locationListenerAutomatic);
-
+		
 		//si true alors
 		//on essaie d'envoyer les positions stockées dans marqueursAEnvoyer
 		//retour 1 : succes, les positions en attente ont été envoyées au serveur, on peut raffraichir la carte et vider la liste marqueurAEnvoyer
@@ -306,9 +306,13 @@ public class ModeleCarte {
 		final Marqueur marqueur = mrq;
 		Drawable icon;
 
-
-		icon = context.getResources().getDrawable(mrq.getParticipant().getDernierMarqueurIconePersonne());
-
+		// initialize the annotation to be shown later
+		if(mrq.EstDernier()){
+			icon = context.getResources().getDrawable(mrq.getParticipant().getDernierMarqueurIconePersonne());
+		}
+		else{
+			icon = context.getResources().getDrawable(mrq.getParticipant().getPasDernierMarqueurIconePersonne());
+		}
 		final DefaultItemizedOverlay poiOverlay = new DefaultItemizedOverlay(icon);
 
 		//creation d'un objet diff pour le calcul de il y a

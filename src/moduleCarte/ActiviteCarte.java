@@ -1,12 +1,6 @@
 package moduleCarte;
 
-import grandModele.Personne;
-
-import java.util.Iterator;
-
 import singletons.EvenementCourant;
-import singletons.Utilisateur;
-
 import com.mapquest.android.maps.GeoPoint;
 import com.mapquest.android.maps.MapActivity;
 import spotevent.fabien.un.R;
@@ -64,7 +58,7 @@ public class ActiviteCarte extends MapActivity {
 		//TTT
 		Toast.makeText(ActiviteCarte.this, EvenementCourant.getEvenementCourant().getIdEvt(),Toast.LENGTH_SHORT).show();
 		///TTT
-		EvenementBDD.setMarqueurs(ActiviteCarte.this);
+		EvenementBDD.setMarqueurs();
 		
 		modeleCarte.afficherDerniersMarqueurs();
 	}

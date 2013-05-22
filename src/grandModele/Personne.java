@@ -5,10 +5,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import moduleCarte.ActiviteCarte;
-
-import android.content.Context;
-
 import com.mapquest.android.maps.GeoPoint;
 import com.mapquest.android.maps.LineOverlay;
 import com.mapquest.android.maps.OverlayItem;
@@ -21,19 +17,13 @@ import singletons.EvenementCourant;
 public class Personne{
 	protected Set<Evenement> evenements;
 	protected ArrayList<Marqueur> marqueurs;
-	protected String idPersonne;
-	protected String nomPersonne;
-	protected String prenomPersonne;
-
-	protected int numPersonne;
-	protected int dernierMarqueurIconePersonne;
 
 	public ArrayList<Marqueur> getMarqueurs() {
 		return marqueurs;
 	}
-
+	
 	public ArrayList<GeoPoint> getGeoPoints() {
-		ArrayList<GeoPoint> geoPoints = new ArrayList<GeoPoint>();
+		ArrayList<GeoPoint> geoPoints = new ArrayList();
 		Iterator<Marqueur> iterator = marqueurs.iterator();
 		while (iterator.hasNext()){
 			Marqueur mrq = (Marqueur) iterator.next();
@@ -42,33 +32,45 @@ public class Personne{
 		return geoPoints;
 	}
 
+	protected String idPersonne;
+	protected String nomPersonne;
+	protected String prenomPersonne;
+	protected int numPersonne;
 
-
+	protected int dernierMarqueurIconePersonne;
+	protected int pasDernierMarqueurIconePersonne;
+	
 	public int getNumPersonne() {
 		return numPersonne;
 	}
 
-	public void setNumPersonne(int numPersonne,Context context) {
+	public void setNumPersonne(int numPersonne) {
 		this.numPersonne = numPersonne;
-		String marqueurIconeChaine = "drawable/marqueur"+numPersonne;
-		int marqueurIcone = context.getResources().getIdentifier(marqueurIconeChaine, "drawable", context.getPackageName());
-		this.setDernierMarqueurIconePersonne(marqueurIcone);	
 	}
 	public void setDernierMarqueurIconePersonne(int dernierMarqueurIconePersonne) {
 		this.dernierMarqueurIconePersonne = dernierMarqueurIconePersonne;
 	}
 
+	public void setPasDernierMarqueurIconePersonne(
+			int pasDernierMarqueurIconePersonne) {
+		this.pasDernierMarqueurIconePersonne = pasDernierMarqueurIconePersonne;
+	}
 	public int getDernierMarqueurIconePersonne() {
 		return dernierMarqueurIconePersonne;
+	}
+	public int getPasDernierMarqueurIconePersonne() {
+		return pasDernierMarqueurIconePersonne;
 	}
 
 	public Set<Evenement> getEvenements() {
 		return evenements;
 	}
-
+	
 	public Personne(){
 		evenements = new HashSet<Evenement>();
 		marqueurs = new ArrayList<Marqueur>();
+		dernierMarqueurIconePersonne = R.drawable.marqueur1;
+		pasDernierMarqueurIconePersonne = R.drawable.dot1;
 	}
 	public String getNomPersonne() {
 		return nomPersonne;
@@ -97,7 +99,7 @@ public class Personne{
 		mrq.participant = this;
 		mrq.evenement = EvenementCourant.getEvenementCourant();
 	}
-
+	
 	public ArrayList<Evenement> getArrayListeEvenements(){
 		Iterator<Evenement> iterator = evenements.iterator();
 		ArrayList<Evenement> listeEvenements = new ArrayList<Evenement>();
@@ -107,7 +109,7 @@ public class Personne{
 		}
 		return listeEvenements;
 	}
-
+	
 	public String[] arrayListeEvenementToString(ArrayList<Evenement> arrayListeEvenements){
 		Iterator<Evenement> iterator = arrayListeEvenements.iterator();
 		String[] listeEvenements = {};
@@ -120,5 +122,5 @@ public class Personne{
 		}
 		return listeEvenements;
 	}
-
+	
 }
