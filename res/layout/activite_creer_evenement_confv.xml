@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/visibiliteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Visibilité de l&apos;événement"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/boutonSuivant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginRight="20dp"
+        android:text="Suivant" />
+
+    <RadioGroup
+        android:id="@+id/radioConfV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/visibiliteTextView"
+        android:layout_centerHorizontal="true" >
+
+        <RadioButton
+            android:id="@+id/boutonRadioPublique"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/visibiliteTextView"
+            android:layout_below="@+id/visibiliteTextView"
+            android:layout_marginTop="43dp"
+            android:checked="true"
+            android:text="Publique" />
+
+        <TextView
+            android:id="@+id/textViewPublique"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/boutonRadioPublique"
+            android:layout_below="@+id/boutonRadioPublique"
+            android:text="L&apos;événement est visible de tous"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <RadioButton
+            android:id="@+id/boutonRadioConfirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewPublique"
+            android:layout_below="@+id/textViewPublique"
+            android:layout_marginTop="17dp"
+            android:text="Sur confirmation" />
+
+        <TextView
+            android:id="@+id/textViewConfirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewPublique"
+            android:layout_alignRight="@+id/visibiliteTextView"
+            android:layout_below="@+id/boutonRadioConfirmation"
+            android:text="L&apos;événement apparaît dans les résultats mais votre confirmation est nécessaire à l&apos;accès"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <RadioButton
+            android:id="@+id/boutonRadioPrive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewConfirmation"
+            android:layout_below="@+id/textViewConfirmation"
+            android:layout_marginTop="17dp"
+            android:text="Privée" />
+
+        <TextView
+            android:id="@+id/textViewPrive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/boutonRadioPrive"
+            android:layout_alignRight="@+id/visibiliteTextView"
+            android:layout_below="@+id/boutonRadioPrive"
+            android:text="L&apos;événement n&apos;apparaît pas dans les résultats, seuls les invités peuvent le voir"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RadioGroup>
+
+</RelativeLayout>

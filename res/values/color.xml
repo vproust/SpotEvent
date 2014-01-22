@@ -1,0 +1,8 @@
+    <resources>
+        <color name="ORANGE">#dd962e</color>
+        <color name="ROUGE">#fa5858</color>
+        <color name="BLEU">#45bff3</color>
+        <color name="VERT">#acda27</color>
+        <color name="ROSE">#e173bf</color>
+        <color name="black">#000000</color>
+    </resources>

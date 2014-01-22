@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SpotEvent</string>
+    <string name="action_settings">Settings</string>
+    <string name="email_format_error">Merci de saisir une adresse email valide</string>
+    <string name="email_or_password_empty">Merci de saisir un mot de passe</string>
+    <string name="echec_connexion">Merci de vérifier vos identifiants et d\'essayer à nouveau</string>
+    <string name="probleme_internet">Vérifiez votre connexion internet</string>
+    <string name="nom_evenement_ou_date_empty">Tous les champs doivent être remplis</string>
+    <string name="confirmation_does_not_match">Les deux mots de passes sont différents</string>
+    <string name="field_empty">Merci de compléter tous les champs de texte</string>
+    
+    <string name="item_one">MON COMPTE</string>
+    <string name="item_two">EVENEMENTS</string>
+    <string name="item_three">INVITATIONS</string>
+    <string name="item_four">ORGANISER</string>
+    <string name="item_five">A PROPOS</string>
+    
+    <string name="menu_search">Recherche</string>
+    <string name="menu_majpos">Mise à jours position</string>
+    <string name="menu_refresh">Rafraichir</string>
+    <string name="menu_info">Infos</string>
+    <string name="menu_help">Aide</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_trace">Afficher les traces</string>
+    <string name="menu_about">A propos</string>
+    <string name="menu_inviter">Inviter des personnes</string>
+
+</resources>

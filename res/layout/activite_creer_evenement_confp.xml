@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/positionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Qui peut partager sa \nposition ?"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/boutonSuivant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginRight="20dp"
+        android:text="Créer" />
+
+    <RadioGroup
+        android:id="@+id/radioConfP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/positionTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" >
+
+        <RadioButton
+            android:id="@+id/boutonRadioPublique"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/visibiliteTextView"
+            android:layout_below="@+id/visibiliteTextView"
+            android:layout_marginTop="43dp"
+            android:checked="true"
+            android:text="Tout le monde" />
+
+        <TextView
+            android:id="@+id/textViewPublique"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/boutonRadioPublique"
+            android:layout_below="@+id/boutonRadioPublique"
+            android:text="Tous ceux qui ont accès à l&apos;événement peuvent partager leur position"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <RadioButton
+            android:id="@+id/boutonRadioConfirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewPublique"
+            android:layout_below="@+id/textViewPublique"
+            android:layout_marginTop="17dp"
+            android:text="Sur confirmation" />
+
+        <TextView
+            android:id="@+id/textViewConfirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewPublique"
+            android:layout_alignRight="@+id/visibiliteTextView"
+            android:layout_below="@+id/boutonRadioConfirmation"
+            android:text="Votre confirmation est nécessaire pour partager sa position"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <RadioButton
+            android:id="@+id/boutonRadioPrive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewConfirmation"
+            android:layout_below="@+id/textViewConfirmation"
+            android:layout_marginTop="17dp"
+            android:text="Privé" />
+
+        <TextView
+            android:id="@+id/textViewPrive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/boutonRadioPrive"
+            android:layout_alignRight="@+id/visibiliteTextView"
+            android:layout_below="@+id/boutonRadioPrive"
+            android:text="Je suis le seul à pouvoir partager ma position"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RadioGroup>
+
+</RelativeLayout>
